@@ -17,6 +17,19 @@ const usuariosQueries = {
         usuarios
     WHERE
         status = 1
+    LIMIT
+        ?, ?
+    `,
+
+    getUsuarioByEmail: `
+    SELECT
+    *
+    FROM
+        usuarios
+    WHERE
+        email=?
+    AND
+        status=1
     `,
 
     updateUsuario: `
@@ -28,6 +41,7 @@ const usuariosQueries = {
     WHERE
         email=?
     `,
+    
     deleteUsuario: `
     UPDATE
         usuarios
